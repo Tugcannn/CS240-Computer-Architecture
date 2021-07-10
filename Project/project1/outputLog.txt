@@ -1,0 +1,25 @@
+PC correct at instrCount          0, Test:           JMP Test,                  131 ns: expected PC=         3, observed PC=   3
+W correct at instrCount          8, Test:         ADD Test 0,                  221 ns: expected W=   32, observed W=   32
+W correct at instrCount         14, Test:         ADD Test 1,                  311 ns: expected W=   16, observed W=   16
+W correct at instrCount         20, Test:        NAND Test 0,                  401 ns: expected W=    0, observed W=    0
+W correct at instrCount         26, Test:        NAND Test 1,                  491 ns: expected W=  247, observed W=  247
+W correct at instrCount         32, Test:        SRRL Test 0,                  581 ns: expected W=    8, observed W=    8
+W correct at instrCount         38, Test:        SRRL Test 1,                  671 ns: expected W=  128, observed W=  128
+W correct at instrCount         44, Test:        SRRL Test 2,                  761 ns: expected W=57088, observed W=57088
+W correct at instrCount         50, Test:        SRRL Test 3,                  851 ns: expected W=61179, observed W=61179
+W correct at instrCount         56, Test:          GE Test 0,                  941 ns: expected W=    0, observed W=    0
+W correct at instrCount         62, Test:          GE Test 1,                 1031 ns: expected W=    1, observed W=    1
+W correct at instrCount         68, Test:          GE Test 0,                 1121 ns: expected W=    1, observed W=    1
+Memory correct at instrCount         74, Test: CP2W and CPfW Test,                 1211 ns, RAM Addr   72: expected   255, received   255
+PC correct at instrCount         78, Test:          SZ Test 0,                 1271 ns: expected PC=        80, observed PC=  80
+PC correct at instrCount         84, Test:          SZ Test 1,                 1331 ns: expected PC=        85, observed PC=  85
+W correct at instrCount         97, Test:  ADD Indirect Test,                 1521 ns: expected W=   16, observed W=   16
+W correct at instrCount        106, Test: NAND Indirect Test,                 1681 ns: expected W=65295, observed W=65295
+W correct at instrCount        115, Test: SRRL Indirect Test,                 1841 ns: expected W=57024, observed W=57024
+W correct at instrCount        124, Test:   GE Indirect Test,                 2001 ns: expected W=    1, observed W=    1
+PC correct at instrCount        131, Test:   SZ Indirect Test,                 2131 ns: expected PC=       133, observed PC= 133
+W correct at instrCount        142, Test: CP2W Indirect Test,                 2291 ns: expected W=65261, observed W=65261
+Memory correct at instrCount        151, Test: CPfW Indirect Test,                 2451 ns, RAM Addr  147: expected 57007, received 57007
+PC correct at instrCount        158, Test:  JMP Indirect Test,                10110 ns: expected PC=       158, observed PC= 158
+Total Errors =   0
+Simulation Successfully Completed

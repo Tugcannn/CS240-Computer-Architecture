@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Tugcan/Desktop/CS240/Project/project1/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Tugcan/Desktop/CS240/Project/project1/xst"
+elaborate
+-ifn projectCPU2021.prj
+-ifmt mixed

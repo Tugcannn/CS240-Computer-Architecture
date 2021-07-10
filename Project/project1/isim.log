@@ -1,0 +1,63 @@
+ISim log file
+Running: C:\Users\Tugcan\Desktop\CS240\Project\project1\projectCPU_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Tugcan/Desktop/CS240/Project/project1/projectCPU_tb_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+PC correct at instrCount          0, Test:           JMP Test,                  131 ns: expected PC=         3, observed PC=   3
+
+W correct at instrCount          8, Test:         ADD Test 0,                  221 ns: expected W=0020, observed W=0020
+
+W correct at instrCount         14, Test:         ADD Test 1,                  311 ns: expected W=0010, observed W=0010
+
+W correct at instrCount         20, Test:        NAND Test 0,                  401 ns: expected W=0000, observed W=0000
+
+W correct at instrCount         26, Test:        NAND Test 1,                  491 ns: expected W=00f7, observed W=00f7
+
+W correct at instrCount         32, Test:        SRRL Test 0,                  581 ns: expected W=0008, observed W=0008
+
+W correct at instrCount         38, Test:        SRRL Test 1,                  671 ns: expected W=0080, observed W=0080
+
+W correct at instrCount         44, Test:        SRRL Test 2,                  761 ns: expected W=df00, observed W=df00
+
+W correct at instrCount         50, Test:        SRRL Test 3,                  851 ns: expected W=eefb, observed W=eefb
+
+W correct at instrCount         56, Test:          GE Test 0,                  941 ns: expected W=0000, observed W=0000
+
+# run all
+W correct at instrCount         62, Test:          GE Test 1,                 1031 ns: expected W=0001, observed W=0001
+
+W correct at instrCount         68, Test:          GE Test 0,                 1121 ns: expected W=0001, observed W=0001
+
+Memory correct at instrCount         74, Test: CP2W and CPfW Test,                 1211 ns, RAM Addr   72: expected 00ff, received 00ff
+
+PC correct at instrCount         78, Test:          SZ Test 0,                 1271 ns: expected PC=        80, observed PC=  80
+
+PC correct at instrCount         84, Test:          SZ Test 1,                 1331 ns: expected PC=        85, observed PC=  85
+
+W correct at instrCount         97, Test:  ADD Indirect Test,                 1521 ns: expected W=0010, observed W=0010
+
+W correct at instrCount        106, Test: NAND Indirect Test,                 1681 ns: expected W=ff0f, observed W=ff0f
+
+W correct at instrCount        115, Test: SRRL Indirect Test,                 1841 ns: expected W=dec0, observed W=dec0
+
+W correct at instrCount        124, Test:   GE Indirect Test,                 2001 ns: expected W=0001, observed W=0001
+
+PC correct at instrCount        131, Test:   SZ Indirect Test,                 2131 ns: expected PC=       133, observed PC= 133
+
+W correct at instrCount        142, Test: CP2W Indirect Test,                 2291 ns: expected W=feed, observed W=feed
+
+Memory correct at instrCount        151, Test: CPfW Indirect Test,                 2451 ns, RAM Addr  147: expected deaf, received deaf
+
+PC correct at instrCount        158, Test:  JMP Indirect Test,                10110 ns: expected PC=       158, observed PC= 158
+
+Total Errors =   0
+Simulation Successfully Completed
+Stopped at time : 10110 ns : File "C:/Users/Tugcan/Desktop/CS240/Project/projectCPU2021_designs/projectCPU2021_tb.v" Line 38

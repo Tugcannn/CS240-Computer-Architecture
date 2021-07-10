@@ -1,0 +1,407 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: blram.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "blram.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "blram"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : blram
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../projectCPU2021_designs/blram.v" in library work
+Compiling verilog include file "../projectCPU2021_designs/projectCPU2021_program.v"
+Module <blram> compiled
+No errors in compilation
+Analysis of file <"blram.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <blram> in library <work> with parameters.
+	DEPTH = "00000000000000000010000000000000"
+	SIZE = "00000000000000000000000000001101"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <blram>.
+	DEPTH = 32'sb00000000000000000010000000000000
+	SIZE = 32'sb00000000000000000000000000001101
+WARNING:Xst:2319 - "../projectCPU2021_designs/blram.v" line 1: Signal memory in initial block is partially initialized. The initialization will be ignored.
+WARNING:Xst:916 - "../projectCPU2021_designs/blram.v" line 15: Delay is ignored for synthesis.
+WARNING:Xst:916 - "../projectCPU2021_designs/blram.v" line 17: Delay is ignored for synthesis.
+Module <blram> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <blram>.
+    Related source file is "../projectCPU2021_designs/blram.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8192x16-bit single-port RAM <Mram_memory> for signal <memory>.
+    Found 16-bit register for signal <o_ram_data_out>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <blram> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8192x16-bit single-port RAM                           : 1
+# Registers                                            : 1
+ 16-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <blram>.
+INFO:Xst:3230 - The RAM description <Mram_memory> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <i_we>          | high     |
+    |     addrA          | connected to signal <i_addr>        |          |
+    |     diA            | connected to signal <i_ram_data_in> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <blram> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8192x16-bit single-port distributed RAM               : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <blram> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block blram, actual ratio is 569.
+Optimizing block <blram> to meet ratio 100 (+ 5) of 960 slices :
+WARNING:Xst:2254 - Area constraint could not be met for block <blram>, final ratio is 569.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : blram.ngr
+Top Level Output File Name         : blram
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 48
+
+Cell Usage :
+# BELS                             : 4629
+#      GND                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 2112
+#      LUT4                        : 288
+#      MUXF5                       : 1312
+#      MUXF6                       : 528
+#      MUXF7                       : 256
+#      MUXF8                       : 128
+# FlipFlops/Latches                : 16
+#      FD                          : 16
+# RAMS                             : 4096
+#      RAM32X1S                    : 4096
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 46
+#      IBUF                        : 30
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                     5429  out of    960   565% (*) 
+ Number of Slice Flip Flops:             16  out of   1920     0%  
+ Number of 4 input LUTs:              10596  out of   1920   551% (*) 
+    Number used as logic:              2404
+    Number used as RAMs:               8192
+ Number of IOs:                          48
+ Number of bonded IOBs:                  47  out of     83    56%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 4112  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.662ns (Maximum Frequency: 130.514MHz)
+   Minimum input arrival time before clock: 9.093ns
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.662ns (frequency: 130.514MHz)
+  Total number of paths / destination ports: 4096 / 16
+-------------------------------------------------------------------------
+Delay:               7.662ns (Levels of Logic = 8)
+  Source:            Mram_memory1 (RAM)
+  Destination:       o_ram_data_out_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Mram_memory1 to o_ram_data_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM32X1S:WCLK->O      1   2.222   0.499  Mram_memory1 (N258)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX_172 (inst_LPM_MUX_172)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX_15_f5_1 (inst_LPM_MUX_15_f52)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX_13_f6_1 (inst_LPM_MUX_13_f62)
+     MUXF7:I0->O           1   0.521   0.000  inst_LPM_MUX_11_f7_1 (inst_LPM_MUX_11_f72)
+     MUXF8:I0->O           1   0.521   0.499  inst_LPM_MUX_9_f8_1 (inst_LPM_MUX_9_f82)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX_6 (inst_LPM_MUX_6)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX_4_f5 (inst_LPM_MUX_4_f5)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX_2_f6 (_varindex0000<0>)
+     FD:D                      0.308          o_ram_data_out_0
+    ----------------------------------------
+    Total                      7.662ns (6.664ns logic, 0.998ns route)
+                                       (87.0% logic, 13.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 86000 / 28688
+-------------------------------------------------------------------------
+Offset:              9.093ns (Levels of Logic = 10)
+  Source:            i_addr<0> (PAD)
+  Destination:       o_ram_data_out_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: i_addr<0> to o_ram_data_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          16384   1.218   1.410  i_addr_0_IBUF (i_addr_0_IBUF)
+     RAM32X1S:A0->O        1   1.025   0.499  Mram_memory1 (N258)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX_172 (inst_LPM_MUX_172)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX_15_f5_1 (inst_LPM_MUX_15_f52)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX_13_f6_1 (inst_LPM_MUX_13_f62)
+     MUXF7:I0->O           1   0.521   0.000  inst_LPM_MUX_11_f7_1 (inst_LPM_MUX_11_f72)
+     MUXF8:I0->O           1   0.521   0.499  inst_LPM_MUX_9_f8_1 (inst_LPM_MUX_9_f82)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX_6 (inst_LPM_MUX_6)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX_4_f5 (inst_LPM_MUX_4_f5)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX_2_f6 (_varindex0000<0>)
+     FD:D                      0.308          o_ram_data_out_0
+    ----------------------------------------
+    Total                      9.093ns (6.685ns logic, 2.408ns route)
+                                       (73.5% logic, 26.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            o_ram_data_out_15 (FF)
+  Destination:       o_ram_data_out<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: o_ram_data_out_15 to o_ram_data_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.420  o_ram_data_out_15 (o_ram_data_out_15)
+     OBUF:I->O                 3.272          o_ram_data_out_15_OBUF (o_ram_data_out<15>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 66.00 secs
+Total CPU time to Xst completion: 66.15 secs
+ 
+--> 
+
+Total memory usage is 4632476 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

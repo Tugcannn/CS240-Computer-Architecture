@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/rotatingDot/rotatingDot.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/rotatingDot/rotatingDot.syr" 

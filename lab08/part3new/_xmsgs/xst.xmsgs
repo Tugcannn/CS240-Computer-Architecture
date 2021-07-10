@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="2319" delta="old" >&quot;<arg fmt="%s" index="1">mem1R1W.v</arg>&quot; line <arg fmt="%d" index="2">1</arg>: Signal <arg fmt="%s" index="3">array</arg> in initial block is partially initialized. The initialization will be ignored.
+</msg>
+
+<msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">Mram_array</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
+
+</messages>
+

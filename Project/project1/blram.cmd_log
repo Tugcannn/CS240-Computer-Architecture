@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 blram.ngc blram.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o blram_map.ncd blram.ngd blram.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 blram.ngc blram.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o blram_map.ncd blram.ngd blram.pcf 
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o blram_map.ncd blram.ngd blram.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/Project/project1/blram.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 blram.ngc blram.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o blram_map.ncd blram.ngd blram.pcf 

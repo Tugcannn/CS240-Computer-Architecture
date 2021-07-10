@@ -1,0 +1,5 @@
+MO progLogic NULL progLogic.v vlg72/prog_logic.bin 1620757878
+MO LedCPUcore NULL LedCPUcore.v vlg12/_led_c_p_ucore.bin 1620757878
+MO Delay NULL Delay.v vlg3F/_delay.bin 1620757878
+MO LedCPUwithRAM NULL LedCPUwithRAM.v vlg2D/_led_c_p_uwith_r_a_m.bin 1620757878
+MO mem1R1W NULL mem1R1W.v vlg16/mem1_r1_w.bin 1620757878

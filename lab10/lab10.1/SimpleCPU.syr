@@ -1,0 +1,629 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: SimpleCPU.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SimpleCPU.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SimpleCPU"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : SimpleCPU
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../lab10project/SimpleCPU.v" in library work
+Module <SimpleCPU> compiled
+No errors in compilation
+Analysis of file <"SimpleCPU.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <SimpleCPU> in library <work> with parameters.
+	SIZE = "00000000000000000000000000001110"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <SimpleCPU>.
+	SIZE = 32'sb00000000000000000000000000001110
+WARNING:Xst:916 - "../lab10project/SimpleCPU.v" line 22: Delay is ignored for synthesis.
+WARNING:Xst:916 - "../lab10project/SimpleCPU.v" line 23: Delay is ignored for synthesis.
+WARNING:Xst:916 - "../lab10project/SimpleCPU.v" line 24: Delay is ignored for synthesis.
+WARNING:Xst:916 - "../lab10project/SimpleCPU.v" line 25: Delay is ignored for synthesis.
+WARNING:Xst:916 - "../lab10project/SimpleCPU.v" line 26: Delay is ignored for synthesis.
+WARNING:Xst:915 - Message (916) is reported only 5 times for each module.
+Module <SimpleCPU> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SimpleCPU>.
+    Related source file is "../lab10project/SimpleCPU.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state> of Case statement line 54 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 26                                             |
+    | Inputs             | 18                                             |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:643 - "../lab10project/SimpleCPU.v" line 168: The result of a 32x14-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "../lab10project/SimpleCPU.v" line 166: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 14-bit register for signal <pCounter>.
+    Found 32-bit subtractor for signal <data_toRAM$addsub0000> created at line 174.
+    Found 15-bit subtractor for signal <data_toRAM$addsub0001> created at line 180.
+    Found 32-bit adder for signal <data_toRAM$addsub0002>.
+    Found 32-bit comparator less for signal <data_toRAM$cmp_lt0000> created at line 154.
+    Found 32-bit comparator less for signal <data_toRAM$cmp_lt0001> created at line 160.
+    Found 32-bit comparator less for signal <data_toRAM$cmp_lt0002> created at line 171.
+    Found 14-bit comparator less for signal <data_toRAM$cmp_lt0003> created at line 177.
+    Found 32x32-bit multiplier for signal <data_toRAM$mult0002> created at line 166.
+    Found 32x14-bit multiplier for signal <data_toRAM$mult0003> created at line 168.
+    Found 32-bit shifter logical right for signal <data_toRAM$shift0004> created at line 172.
+    Found 32-bit shifter logical left for signal <data_toRAM$shift0005> created at line 174.
+    Found 32-bit shifter logical right for signal <data_toRAM$shift0006> created at line 178.
+    Found 32-bit shifter logical left for signal <data_toRAM$shift0007> created at line 180.
+    Found 32-bit register for signal <num1>.
+    Found 32-bit register for signal <num2>.
+    Found 4-bit register for signal <opcode>.
+    Found 14-bit register for signal <operand1>.
+    Found 14-bit register for signal <operand2>.
+    Found 14-bit adder for signal <pCounter$share0000> created at line 54.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 110 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   4 Comparator(s).
+	inferred   4 Combinational logic shifter(s).
+Unit <SimpleCPU> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 2
+ 32x14-bit multiplier                                  : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 4
+ 14-bit adder                                          : 1
+ 15-bit subtractor                                     : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 6
+ 14-bit register                                       : 3
+ 32-bit register                                       : 2
+ 4-bit register                                        : 1
+# Comparators                                          : 4
+ 14-bit comparator less                                : 1
+ 32-bit comparator less                                : 3
+# Logic shifters                                       : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 111
+ 100   | 101
+ 101   | 110
+ 110   | 010
+ 111   | 100
+-------------------
+
+Synthesizing (advanced) Unit <SimpleCPU>.
+	Found pipelined multiplier on signal <data_toRAM_mult0002>:
+		- 1 pipeline level(s) found in a register on signal <num1>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <data_toRAM_mult0003>:
+		- 1 pipeline level(s) found in a register on signal <num1>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <operand2>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_data_toRAM_mult0002 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_data_toRAM_mult0003 by adding 2 register level(s).
+Unit <SimpleCPU> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Multipliers                                          : 2
+ 32x14-bit registered multiplier                       : 1
+ 32x32-bit registered multiplier                       : 1
+# Adders/Subtractors                                   : 4
+ 14-bit adder                                          : 1
+ 15-bit subtractor                                     : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 110
+ Flip-Flops                                            : 110
+# Comparators                                          : 4
+ 14-bit comparator less                                : 1
+ 32-bit comparator less                                : 3
+# Logic shifters                                       : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <Mmult_data_toRAM_mult0002_submult_11> of sequential type is unconnected in block <SimpleCPU>.
+INFO:Xst:2261 - The FF/Latch <operand2_8> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_5> 
+INFO:Xst:2261 - The FF/Latch <operand2_13> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_0> 
+INFO:Xst:2261 - The FF/Latch <num1_3> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_28> 
+INFO:Xst:2261 - The FF/Latch <operand2_2> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_11> 
+INFO:Xst:2261 - The FF/Latch <num1_8> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_23> 
+INFO:Xst:2261 - The FF/Latch <num1_13> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_18> 
+INFO:Xst:2261 - The FF/Latch <num1_26> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_5> 
+INFO:Xst:2261 - The FF/Latch <num1_18> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_13> 
+INFO:Xst:2261 - The FF/Latch <num1_31> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_0> 
+INFO:Xst:2261 - The FF/Latch <operand2_7> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_6> 
+INFO:Xst:2261 - The FF/Latch <operand2_12> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_1> 
+INFO:Xst:2261 - The FF/Latch <num1_2> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_29> 
+INFO:Xst:2261 - The FF/Latch <operand2_1> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_12> 
+INFO:Xst:2261 - The FF/Latch <num1_7> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_24> 
+INFO:Xst:2261 - The FF/Latch <num1_12> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_19> 
+INFO:Xst:2261 - The FF/Latch <num1_25> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_6> 
+INFO:Xst:2261 - The FF/Latch <num1_17> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_14> 
+INFO:Xst:2261 - The FF/Latch <num1_30> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_1> 
+INFO:Xst:2261 - The FF/Latch <operand2_6> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_7> 
+INFO:Xst:2261 - The FF/Latch <operand2_11> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_2> 
+INFO:Xst:2261 - The FF/Latch <operand2_0> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_13> 
+INFO:Xst:2261 - The FF/Latch <num1_1> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_30> 
+INFO:Xst:2261 - The FF/Latch <num1_6> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_25> 
+INFO:Xst:2261 - The FF/Latch <num1_24> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_7> 
+INFO:Xst:2261 - The FF/Latch <num1_11> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_20> 
+INFO:Xst:2261 - The FF/Latch <num1_16> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_15> 
+INFO:Xst:2261 - The FF/Latch <num1_29> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_2> 
+INFO:Xst:2261 - The FF/Latch <num1_21> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_10> 
+INFO:Xst:2261 - The FF/Latch <operand2_5> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_8> 
+INFO:Xst:2261 - The FF/Latch <operand2_10> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_3> 
+INFO:Xst:2261 - The FF/Latch <num1_0> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_31> 
+INFO:Xst:2261 - The FF/Latch <num1_5> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_26> 
+INFO:Xst:2261 - The FF/Latch <num1_23> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_8> 
+INFO:Xst:2261 - The FF/Latch <num1_10> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_21> 
+INFO:Xst:2261 - The FF/Latch <num1_15> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_16> 
+INFO:Xst:2261 - The FF/Latch <num1_28> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_3> 
+INFO:Xst:2261 - The FF/Latch <num1_20> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_11> 
+INFO:Xst:2261 - The FF/Latch <operand2_4> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_9> 
+INFO:Xst:2261 - The FF/Latch <operand2_9> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_4> 
+INFO:Xst:2261 - The FF/Latch <num1_4> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_27> 
+INFO:Xst:2261 - The FF/Latch <num1_22> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_9> 
+INFO:Xst:2261 - The FF/Latch <operand2_3> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult00031_10> 
+INFO:Xst:2261 - The FF/Latch <num1_9> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_22> 
+INFO:Xst:2261 - The FF/Latch <num1_14> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_17> 
+INFO:Xst:2261 - The FF/Latch <num1_27> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_4> 
+INFO:Xst:2261 - The FF/Latch <num1_19> in Unit <SimpleCPU> is equivalent to the following FF/Latch, which will be removed : <Mmult_data_toRAM_mult0003_12> 
+
+Optimizing unit <SimpleCPU> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SimpleCPU, actual ratio is 109.
+Optimizing block <SimpleCPU> to meet ratio 100 (+ 5) of 960 slices :
+Area constraint is met for block <SimpleCPU>, final ratio is 97.
+FlipFlop operand2_0 has been replicated 1 time(s)
+FlipFlop state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop state_FSM_FFd2 has been replicated 2 time(s)
+FlipFlop state_FSM_FFd3 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 120
+ Flip-Flops                                            : 120
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SimpleCPU.ngr
+Top Level Output File Name         : SimpleCPU
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 95
+
+Cell Usage :
+# BELS                             : 2849
+#      GND                         : 1
+#      INV                         : 34
+#      LUT1                        : 3
+#      LUT2                        : 266
+#      LUT2_D                      : 1
+#      LUT3                        : 404
+#      LUT3_D                      : 5
+#      LUT4                        : 927
+#      LUT4_D                      : 2
+#      MULT_AND                    : 171
+#      MUXCY                       : 502
+#      MUXF5                       : 94
+#      VCC                         : 1
+#      XORCY                       : 438
+# FlipFlops/Latches                : 120
+#      FDR                         : 82
+#      FDRE                        : 4
+#      FDRS                        : 34
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 94
+#      IBUF                        : 33
+#      OBUF                        : 61
+# MULTs                            : 3
+#      MULT18X18SIO                : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                      898  out of    960    93%  
+ Number of Slice Flip Flops:            120  out of   1920     6%  
+ Number of 4 input LUTs:               1642  out of   1920    85%  
+ Number of IOs:                          95
+ Number of bonded IOBs:                  95  out of     83   114% (*) 
+ Number of MULT18X18SIOs:                 3  out of      4    75%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 123   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.483ns (Maximum Frequency: 133.636MHz)
+   Minimum input arrival time before clock: 9.934ns
+   Maximum output required time after clock: 19.354ns
+   Maximum combinational path delay: 20.265ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.483ns (frequency: 133.636MHz)
+  Total number of paths / destination ports: 2147 / 203
+-------------------------------------------------------------------------
+Delay:               7.483ns (Levels of Logic = 16)
+  Source:            state_FSM_FFd1_1 (FF)
+  Destination:       pCounter_13 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: state_FSM_FFd1_1 to pCounter_13
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q             1   0.591   0.595  state_FSM_FFd1_1 (state_FSM_FFd1_1)
+     LUT3:I0->O           14   0.704   1.000  state_FSM_Out51 (state_cmp_eq0023)
+     MULT_AND:I0->LO       0   0.741   0.000  pCounter_mux0001<1>_mand (pCounter_mux0001<1>_mand1)
+     MUXCY:DI->O           1   0.888   0.000  Madd_pCounter_share0000_cy<1> (Madd_pCounter_share0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<2> (Madd_pCounter_share0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<3> (Madd_pCounter_share0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<4> (Madd_pCounter_share0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<5> (Madd_pCounter_share0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<6> (Madd_pCounter_share0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<7> (Madd_pCounter_share0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<8> (Madd_pCounter_share0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<9> (Madd_pCounter_share0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<10> (Madd_pCounter_share0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_pCounter_share0000_cy<11> (Madd_pCounter_share0000_cy<11>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_pCounter_share0000_cy<12> (Madd_pCounter_share0000_cy<12>)
+     XORCY:CI->O           1   0.804   0.499  Madd_pCounter_share0000_xor<13> (pCounter_share0000<13>)
+     LUT2:I1->O            1   0.704   0.000  pCounter_mux0000<13>1 (pCounter_mux0000<13>1)
+     FDRS:D                    0.308          pCounter_13
+    ----------------------------------------
+    Total                      7.483ns (5.389ns logic, 2.094ns route)
+                                       (72.0% logic, 28.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1291 / 303
+-------------------------------------------------------------------------
+Offset:              9.934ns (Levels of Logic = 7)
+  Source:            data_fromRAM<3> (PAD)
+  Destination:       pCounter_1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: data_fromRAM<3> to pCounter_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           120   1.218   1.465  data_fromRAM_3_IBUF (data_fromRAM_3_IBUF)
+     LUT2:I0->O            5   0.704   0.637  pCounter_cmp_eq000011 (N48)
+     LUT4:I3->O            1   0.704   0.000  pCounter_cmp_eq0000_wg_lut<6> (pCounter_cmp_eq0000_wg_lut<6>)
+     MUXCY:S->O            1   0.464   0.000  pCounter_cmp_eq0000_wg_cy<6> (pCounter_cmp_eq0000_wg_cy<6>)
+     MUXCY:CI->O           2   0.459   0.526  pCounter_cmp_eq0000_wg_cy<7> (pCounter_cmp_eq0000)
+     LUT4_D:I1->O         13   0.704   1.018  pCounter_mux0000<0>21 (N55)
+     LUT4:I2->O            1   0.704   0.420  pCounter_mux0000<1>_SW0 (N144)
+     FDRS:S                    0.911          pCounter_1
+    ----------------------------------------
+    Total                      9.934ns (5.868ns logic, 4.066ns route)
+                                       (59.1% logic, 40.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 12571045 / 61
+-------------------------------------------------------------------------
+Offset:              19.354ns (Levels of Logic = 39)
+  Source:            operand2_3 (FF)
+  Destination:       data_toRAM<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: operand2_3 to data_toRAM<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q            147   0.591   1.299  operand2_3 (operand2_3)
+     MULT_AND:I1->LO       0   0.741   0.000  Mmult_data_toRAM_mult0003_Mmult_data_toRAM_mult0003_ff_0_x_Mmult_data_toRAM_mult0003_ff_32_mand (Mmult_data_toRAM_mult0003_Mmult_data_toRAM_mult0003_ff_0_x_Mmult_data_toRAM_mult0003_ff_32_mand1)
+     MUXCY:DI->O           1   0.888   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<3> (Mmult_data_toRAM_mult0003_Madd6_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<4> (Mmult_data_toRAM_mult0003_Madd6_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<5> (Mmult_data_toRAM_mult0003_Madd6_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<6> (Mmult_data_toRAM_mult0003_Madd6_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<7> (Mmult_data_toRAM_mult0003_Madd6_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<8> (Mmult_data_toRAM_mult0003_Madd6_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<9> (Mmult_data_toRAM_mult0003_Madd6_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<10> (Mmult_data_toRAM_mult0003_Madd6_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<11> (Mmult_data_toRAM_mult0003_Madd6_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<12> (Mmult_data_toRAM_mult0003_Madd6_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<13> (Mmult_data_toRAM_mult0003_Madd6_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<14> (Mmult_data_toRAM_mult0003_Madd6_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<15> (Mmult_data_toRAM_mult0003_Madd6_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<16> (Mmult_data_toRAM_mult0003_Madd6_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<17> (Mmult_data_toRAM_mult0003_Madd6_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<18> (Mmult_data_toRAM_mult0003_Madd6_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<19> (Mmult_data_toRAM_mult0003_Madd6_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<20> (Mmult_data_toRAM_mult0003_Madd6_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<21> (Mmult_data_toRAM_mult0003_Madd6_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<22> (Mmult_data_toRAM_mult0003_Madd6_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<23> (Mmult_data_toRAM_mult0003_Madd6_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<24> (Mmult_data_toRAM_mult0003_Madd6_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<25> (Mmult_data_toRAM_mult0003_Madd6_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<26> (Mmult_data_toRAM_mult0003_Madd6_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0003_Madd6_cy<27> (Mmult_data_toRAM_mult0003_Madd6_cy<27>)
+     XORCY:CI->O           1   0.804   0.595  Mmult_data_toRAM_mult0003_Madd6_xor<28> (Mmult_data_toRAM_mult0003_Madd_286)
+     LUT2:I0->O            1   0.704   0.000  Mmult_data_toRAM_mult0003_Madd9_lut<28> (Mmult_data_toRAM_mult0003_Madd9_lut<28>)
+     MUXCY:S->O            1   0.464   0.000  Mmult_data_toRAM_mult0003_Madd9_cy<28> (Mmult_data_toRAM_mult0003_Madd9_cy<28>)
+     XORCY:CI->O           1   0.804   0.595  Mmult_data_toRAM_mult0003_Madd9_xor<29> (Mmult_data_toRAM_mult0003_Madd_299)
+     LUT2:I0->O            1   0.704   0.000  Mmult_data_toRAM_mult0003_Madd11_lut<29> (Mmult_data_toRAM_mult0003_Madd11_lut<29>)
+     MUXCY:S->O            1   0.464   0.000  Mmult_data_toRAM_mult0003_Madd11_cy<29> (Mmult_data_toRAM_mult0003_Madd11_cy<29>)
+     XORCY:CI->O           1   0.804   0.499  Mmult_data_toRAM_mult0003_Madd11_xor<30> (Mmult_data_toRAM_mult0003_Madd_3011)
+     LUT2:I1->O            1   0.704   0.000  Mmult_data_toRAM_mult0003_Madd12_lut<30> (Mmult_data_toRAM_mult0003_Madd12_lut<30>)
+     MUXCY:S->O            0   0.464   0.000  Mmult_data_toRAM_mult0003_Madd12_cy<30> (Mmult_data_toRAM_mult0003_Madd12_cy<30>)
+     XORCY:CI->O           1   0.804   0.455  Mmult_data_toRAM_mult0003_Madd12_xor<31> (data_toRAM_mult0003<31>)
+     LUT4:I2->O            1   0.704   0.455  data_toRAM<31>308_SW1 (N694)
+     LUT4:I2->O            1   0.704   0.420  data_toRAM<31>308 (data_toRAM_31_OBUF)
+     OBUF:I->O                 3.272          data_toRAM_31_OBUF (data_toRAM<31>)
+    ----------------------------------------
+    Total                     19.354ns (15.036ns logic, 4.318ns route)
+                                       (77.7% logic, 22.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 49693 / 47
+-------------------------------------------------------------------------
+Delay:               20.265ns (Levels of Logic = 24)
+  Source:            data_fromRAM<3> (PAD)
+  Destination:       data_toRAM<31> (PAD)
+
+  Data Path: data_fromRAM<3> to data_toRAM<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           120   1.218   1.290  data_fromRAM_3_IBUF (data_fromRAM_3_IBUF)
+     MULT18X18SIO:B3->P17    1   4.873   0.499  Mmult_data_toRAM_mult0002_submult_0 (Mmult_data_toRAM_mult0002_submult_0_P_to_Adder_A_17)
+     LUT2:I1->O            1   0.704   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_lut<17> (Mmult_data_toRAM_mult0002_submult_00_Madd_lut<17>)
+     MUXCY:S->O            1   0.464   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<17> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<18> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<19> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<20> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<21> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<22> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<23> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<24> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<25> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<26> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<27> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<28> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Mmult_data_toRAM_mult0002_submult_00_Madd_cy<29> (Mmult_data_toRAM_mult0002_submult_00_Madd_cy<29>)
+     XORCY:CI->O           1   0.804   0.595  Mmult_data_toRAM_mult0002_submult_00_Madd_xor<30> (Mmult_data_toRAM_mult0002_submult_0_30)
+     LUT2:I0->O            1   0.704   0.000  Mmult_data_toRAM_mult0002_Madd_lut<30> (Mmult_data_toRAM_mult0002_Madd_lut<30>)
+     MUXCY:S->O            0   0.464   0.000  Mmult_data_toRAM_mult0002_Madd_cy<30> (Mmult_data_toRAM_mult0002_Madd_cy<30>)
+     XORCY:CI->O           1   0.804   0.455  Mmult_data_toRAM_mult0002_Madd_xor<31> (data_toRAM_mult0002<31>)
+     LUT4:I2->O            1   0.704   0.424  data_toRAM<31>276 (data_toRAM<31>276)
+     LUT4:I3->O            1   0.704   0.455  data_toRAM<31>308_SW1 (N694)
+     LUT4:I2->O            1   0.704   0.420  data_toRAM<31>308 (data_toRAM_31_OBUF)
+     OBUF:I->O                 3.272          data_toRAM_31_OBUF (data_toRAM<31>)
+    ----------------------------------------
+    Total                     20.265ns (16.127ns logic, 4.138ns route)
+                                       (79.6% logic, 20.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.98 secs
+ 
+--> 
+
+Total memory usage is 4546856 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :   50 (   0 filtered)
+

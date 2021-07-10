@@ -1,0 +1,43 @@
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 "knightRider.ngc" knightRider.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o knightRider_map.ncd knightRider.ngd knightRider.pcf 
+par -w -intstyle ise -ol high -t 1 knightRider_map.ncd knightRider.ncd knightRider.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml knightRider.twx knightRider.ncd -o knightRider.twr knightRider.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab05 - temporary/knightRider/knightRider.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 "knightRider.ngc" knightRider.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o knightRider_map.ncd knightRider.ngd knightRider.pcf 
+par -w -intstyle ise -ol high -t 1 knightRider_map.ncd knightRider.ncd knightRider.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml knightRider.twx knightRider.ncd -o knightRider.twr knightRider.pcf 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">VSCPU.v</arg>&quot; line <arg fmt="%d" index="2">22</arg>: Delay is ignored for synthesis.
+</msg>
+
+<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">VSCPU.v</arg>&quot; line <arg fmt="%d" index="2">23</arg>: Delay is ignored for synthesis.
+</msg>
+
+<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">VSCPU.v</arg>&quot; line <arg fmt="%d" index="2">24</arg>: Delay is ignored for synthesis.
+</msg>
+
+<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">VSCPU.v</arg>&quot; line <arg fmt="%d" index="2">25</arg>: Delay is ignored for synthesis.
+</msg>
+
+<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">VSCPU.v</arg>&quot; line <arg fmt="%d" index="2">26</arg>: Delay is ignored for synthesis.
+</msg>
+
+<msg type="warning" file="Xst" num="915" delta="old" >Message (<arg fmt="%d" index="1">916</arg>) is reported only 5 times for each module.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">num2</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="warning" file="Xst" num="1336" delta="old" > (*) More than 100% of Device resources are used
+</msg>
+
+</messages>
+

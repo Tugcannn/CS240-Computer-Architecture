@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/xst"
+elaborate
+-ifn progLogic.prj
+-ifmt mixed

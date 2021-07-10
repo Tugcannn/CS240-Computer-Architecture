@@ -1,0 +1,19 @@
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 LedCPUwithRAM.ngc LedCPUwithRAM.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o LedCPUwithRAM_map.ncd LedCPUwithRAM.ngd LedCPUwithRAM.pcf 
+par -w -intstyle ise -ol high -t 1 LedCPUwithRAM_map.ncd LedCPUwithRAM.ncd LedCPUwithRAM.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LedCPUwithRAM.twx LedCPUwithRAM.ncd -o LedCPUwithRAM.twr LedCPUwithRAM.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 LedCPUwithRAM.ngc LedCPUwithRAM.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o LedCPUwithRAM_map.ncd LedCPUwithRAM.ngd LedCPUwithRAM.pcf 
+par -w -intstyle ise -ol high -t 1 LedCPUwithRAM_map.ncd LedCPUwithRAM.ncd LedCPUwithRAM.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LedCPUwithRAM.twx LedCPUwithRAM.ncd -o LedCPUwithRAM.twr LedCPUwithRAM.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-4 LedCPUwithRAM.ngc LedCPUwithRAM.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o LedCPUwithRAM_map.ncd LedCPUwithRAM.ngd LedCPUwithRAM.pcf 
+par -w -intstyle ise -ol high -t 1 LedCPUwithRAM_map.ncd LedCPUwithRAM.ncd LedCPUwithRAM.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LedCPUwithRAM.twx LedCPUwithRAM.ncd -o LedCPUwithRAM.twr LedCPUwithRAM.pcf 
+xst -intstyle ise -ifn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.xst" -ofn "C:/Users/Tugcan/Desktop/CS240/lab08/part3new/LedCPUwithRAM.syr" 

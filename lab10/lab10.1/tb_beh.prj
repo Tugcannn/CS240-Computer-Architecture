@@ -1,0 +1,4 @@
+verilog work "../lab10project/SimpleCPU.v"
+verilog work "../lab10project/blram.v"
+verilog work "../lab10project/tb_SimpleCPU.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

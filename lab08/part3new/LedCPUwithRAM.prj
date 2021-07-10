@@ -1,0 +1,5 @@
+verilog work "Delay.v"
+verilog work "progLogic.v"
+verilog work "mem1R1W.v"
+verilog work "LedCPUcore.v"
+verilog work "LedCPUwithRAM.v"
